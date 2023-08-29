@@ -13,5 +13,10 @@ jobs:
       - uses: thedoctor0/zip-release@0.7.1
         with:
           type: 'zip'
-          filename: 'aot-magisk'
-          exclusions: '*.git *.gitinore *.github *.md'
+          filename: 'aot-magisk.zip'
+          exclusions: '*.git* *.github* *.gitinore *.md'
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: 'aot-magisk.zip'
+          path: 'aot-magisk.zip'
