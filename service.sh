@@ -1,10 +1,11 @@
 #!/system/bin/sh
 
 load_config() {
+    MODPATH="$(dirname "$(readlink -f "$0")")"
     if [ -f "$MODPATH/config" ]; then
         . "$MODPATH/config"
     else
-        PORT=-1
+        PORT=""
     fi
 }
 

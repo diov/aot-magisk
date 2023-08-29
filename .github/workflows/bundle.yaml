@@ -10,13 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: thedoctor0/zip-release@0.7.1
-        with:
-          type: 'zip'
-          filename: 'aot-magisk.zip'
-          exclusions: '*.git* *.github* *.gitinore *.md'
+      - name: create zip
+        run: |
+          zip -r aot-magisk.zip . -x "*.git*" "*.github*" "*.gitignore" "*.md" .
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
-          name: 'aot-magisk.zip'
+          name: 'aot-magisk'
           path: 'aot-magisk.zip'
