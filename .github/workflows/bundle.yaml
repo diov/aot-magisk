@@ -1,0 +1,17 @@
+name: bundle
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: thedoctor0/zip-release@0.7.1
+        with:
+          type: 'zip'
+          filename: 'aot-magisk'
+          exclusions: '*.git *.gitinore *.github *.md'

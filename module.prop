@@ -1,0 +1,6 @@
+id=aot-magisk
+name=ADB-over-TCP
+version=1.0.0
+versionCode=1
+author=Dio.Ye
+description=A Magisk module to enable ADB over TCP.
